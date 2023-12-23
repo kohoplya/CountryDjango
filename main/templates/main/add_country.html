@@ -1,0 +1,55 @@
+{% load static %}
+<!--<?php include ("./form.php")?>-->
+
+<!DOCTYPE html>
+<html lang="en" class="blue_theme">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic&display=swap">
+    <title>Add_country</title>
+    <link rel="stylesheet" href="{% static 'css/add_country.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        {% include "main/header.html" %} 
+        <main class="page" id="main">
+            <div class="form__container">
+                <form id="form" method="post", enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="errors">{{ form.non_field_errors }}</div>
+                    <div class="forms">
+                        <div class="form_user">
+                            <div class="tile_user">Користувач</div>
+                            <ul>
+                                <div id = "name_text">{{ form.userName }}</div>
+                                <div class="errors">{{ form.userName.errors }}</div>
+                                <div id = "tel">{{ form.telephone }}</div>
+                                <div class="errors">{{ form.telephone.errors }}</div>
+                            </ul>
+                        </div>
+                        <div class="form_country">
+                            <div class="tile_country">Країна</div>
+                            <ul>
+                                <div id = "country_text">{{ form.countryName }}</div>
+                                <div class="errors">{{ form.countryName.errors }}</div>
+                                <div id = "capital_text">{{ form.capitalName }}</div>
+                                <div class="errors">{{ form.capitalName.errors }}</div>
+                                <div id = "area_text">{{ form.area }}</div>
+                                <div class="errors">{{ form.area.errors }}</div>
+                                <div id = "file">
+                                    {{ form.img.label_tag  }}
+                                    {{ form.img }}
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id = "area">{{ form.inputArea }}</div>
+                    <div class="submit"><button class="submit_button" type="submit" id="submitbutton">Підтвердити</button></div>
+                </form>
+            </div>
+        </main>
+        {% include "main/footer.html" %} 
+    </div>
+    <!-- <script src="{% static 'js/script.js' %}"></script> -->
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+<header class="header">
+    <div class="add_country_header">
+        <a href="add_country.html" class="">ДОДАТИ КРАЇНУ</a>
+        <a href="models.html" class="">ЗАПИТИ</a>
+    </div>
+    <div class="header__menu">
+        <ul class="header__list">
+            <li><a href="main.html" class="header__link">НА ГОЛОВНУ</a></li>
+            <li><a href="#main" class="header__link">НА ПОЧАТОК</a></li>
+            <li><a href="japan.html" class="header__link">ПАМ'ЯТКИ ЯПОНІЇ</a></li>
+            <li><a href="china.html" class="header__link">ПАМ'ЯТКИ КИТАЮ</a></li>
+            <li><a href="south_korea.html" class="header__link">ПАМ'ЯТКИ КОРЕЇ</a></li>
+        </ul>
+    </div>
+    <ul class="color_list">
+        <li><div class="color_green"></div></li>
+        <li><div class="color_red"></div></li>
+        <li><div class="color_pink"></div></li>
+        <li><div class="color_blue"></div></li>
+    </ul>
+    <script src="{% static 'js/header.js' %}"></script>
+</header>

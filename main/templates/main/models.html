@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="blue_theme">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic&display=swap">
+    <title>Models</title>
+    <link rel="stylesheet" href="{% static 'css/models.css' %}">
+</head>
+<body>
+    <div class="wrapper">
+        <main class="page" id="main">
+            {% include "main/header.html" %}
+            {% for c in countries %}
+            <div class="country_block">
+                <p class="img"> <img src="{{ MEDIA_URL }}{{ c.img.url }}" ></p>
+                <div class="country_info">
+                    <p> Користувач: {{ c.userName }} </p>
+                    <p> Номер телефону: {{ c.telephone }} </p>
+                    <p> Країна: {{ c.countryName }} </p>
+                    <p> Столиця країни: {{ c.capitalName }} </p>
+                    <p> Площа країни: {{ c.area }} </p>
+                    <p> Інфо: {{ c.inputArea }} </p>
+                </div>
+            </div>
+            {% endfor %}
+            <footer>{% include "main/footer.html" %}</footer> 
+        </main>
+    </div>
+</body>
+</html>
